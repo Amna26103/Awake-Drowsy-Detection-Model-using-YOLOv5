@@ -1,0 +1,7 @@
+path : E:\Object Detections\data
+train : images
+val : images 
+nc: 2
+names: 
+  0: awake
+  1: drowsy
