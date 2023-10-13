@@ -1,33 +1,25 @@
 ﻿# Awake-Drowsy-Detection-Model-using-YOLOv5
-Certainly! Here's the updated README file with a warning about CUDA GPU and a suggestion to use Google Colab:
-
----
-
-# Drowsiness Detection using YOLOv5
 
 ## Overview
 
-This repository implements a robust Drowsiness Detection system using the YOLOv5 (You Only Look Once) object detection framework. The model is designed to accurately detect and classify instances of drowsiness in real-time video streams, making it particularly suitable for applications such as driver monitoring systems and other scenarios where fatigue detection is critical.
+This repository implements a Drowsiness Detection system using the YOLOv5 (You Only Look Once) object detection framework. The model is designed to accurately detect and classify instances of drowsiness in real-time video streams, making it particularly suitable for applications such as driver monitoring systems and other scenarios where fatigue detection is critical.
 
 ## Table of Contents
 
 - [Installation](#installation)
-- [Dataset Preparation](#dataset-preparation)
 - [Training](#training)
 - [Model Evaluation](#model-evaluation)
 - [Real-Time Detection](#real-time-detection)
 - [Issues and Solutions](#issues-and-solutions)
 - [Future Improvements](#future-improvements)
 - [Acknowledgments](#acknowledgments)
-- [License](#license)
-- [Contributing](#contributing)
 
 ## Installation
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/your-repository.git
+git clone https://github.com/Amna26103/Awake-Drowsy-Detection-Model-using-YOLOv5
 cd your-repository
 ```
 
@@ -37,24 +29,13 @@ cd your-repository
 pip install -r requirements.txt
 ```
 
-## Dataset Preparation
-
-1. **Organize Dataset:**
-   - Prepare your dataset with labeled images and corresponding label files.
-   - Organize the dataset into two folders: `images` for training images and `labels` for corresponding label files.
-
-2. **Create Classes File:**
-   - Create a `classes.txt` file listing all the classes present in your dataset.
-
-3. **Configure Dataset YAML:**
-   - Edit the `dataset.yaml` file to specify the dataset configuration, including paths to training and validation images, the number of classes, and class names.
-
 ## Training
-
+**Warning: Ensure CUDA GPU Availability for Faster Training and Inference.Otherwise use Google Colab**
+ 
 Train the model using the following command:
 
 ```bash
-python train.py --img-size 640 --batch-size 16 --epochs 500 --data dataset.yaml --weights yolov5s.pt
+python train.py --img-size 2330 --batch-size 3 --epochs 500 --data dataset.yaml --weights yolov5s.pt --workers 2
 ```
 
 **Note: Ensure that you have a CUDA-enabled GPU for faster training.**
@@ -100,15 +81,3 @@ Possible enhancements to the model include feature extraction from eyes and mout
 ## Acknowledgments
 
 This project is built upon the YOLOv5 framework. Special thanks to the contributors of the YOLOv5 repository for their continuous efforts in developing and maintaining this powerful object detection framework.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Contributing
-
-Contributions are welcome! Please check the [Contributing Guidelines](CONTRIBUTING.md) for more details on how to contribute to this project.
-
----
-
-Feel free to adjust the content based on your specific preferences and requirements.
